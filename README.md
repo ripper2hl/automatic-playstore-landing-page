@@ -1,11 +1,11 @@
-# Automatic App Landing Page
-**Create and deploy an iOS app landing page on GitHub Pages in only five minutes.**
+# Automatic Play Store Landing Page
+**Create and deploy an Android app landing page on GitHub Pages in only five minutes.**
 
 Designed for GitHub Pages for super easy set up. 
 
 🔧 Fork this repo
 
-🗝 Enter iOS App ID in `_config.yml`
+🗝 Enter Play Store URL in `_config.yml`
 
 📲 Upload video preview or screenshot
 
@@ -31,17 +31,16 @@ After forking the repo, your site will be live immediately on your personal Gith
 
 
 
-### Step 2: Enter iOS App ID in `_config.yml`
-Enter your iOS app ID in the `ios_app_id` field and commit your changes. Your site will automatically rebuild with your app icon, name, price and link to App Store.
+### Step 2: Configure your app in `_config.yml`
+Enter your app details in the `_config.yml` file and commit your changes. Your site will automatically rebuild with your app information.
 
-You can go on with customising almost anything in the `_config.yml` file. 
+You can customise almost anything in the `_config.yml` file. 
 
 Things you can customise in `_config.yml`:
 - App Name
 - App Icon
 - App Description
 - App Price
-- App Store Link
 - Play Store Link
 - Press Kit Download Link
 - Cover Image
