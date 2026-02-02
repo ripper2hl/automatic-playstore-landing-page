@@ -44,7 +44,27 @@ You can also customise:
 - Social Links
 - Feature List (Title, text, icon)
 
-### Step 3: Add assets
+### Step 2.5: Automatic Media Scraper (Recommended) 🪄
+Although this template originally required manual entry, **this version includes a powerful script to automate the process.**
+
+Instead of downloading assets manually, you can run:
+```bash
+npm install
+node fetch-app-data.js com.your.package.name
+```
+**(Replace `com.your.package.name` with your actual app package ID)**
+
+This script will automatically:
+*   📥 Download your **App Icon**
+*   📸 Download your **Screenshots** (filtering for portrait ones)
+*   📝 Update `_config.yml` with your **App Name**, **Description**, **Price**, and **What's New** text.
+
+*Note: By default, it fetches data from the **Mexican Play Store (es_MX)**. You can change this by editing line 37 in `fetch-app-data.js`.*
+
+### Step 3: Add assets (Manual Method)
+**If you used the scraper in Step 2.5, skip this step!** Your assets are already ready.
+
+If you prefer to do it manually:
 
 #### App Icon
 Upload your high-res app icon to `assets/appicon.png`.
