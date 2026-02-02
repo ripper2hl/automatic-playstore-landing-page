@@ -2,3 +2,7 @@
 .sass-cache
 _site
 Gemfile.lock
+node_modules/
+package.json
+package-lock.json
+fetch-app-data.js

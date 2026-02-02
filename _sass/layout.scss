@@ -382,94 +382,83 @@ nav>ul li a:active {
 .iphonePreview {
 	grid-area: p;
 	background-image: url($device-color);
-	background-size: 400px auto;
+	background-size: contain;
+	background-position: center;
 	background-repeat: no-repeat;
-	margin-top: 68px;
+
+	// Desktop Alignment: Center vertically in the grid row
+	align-self: center;
+	justify-self: center;
+	margin-top: 0;
+
+	// Dimensions & Aspect Ratio
+	width: 400px;
+	height: auto;
+	aspect-ratio: 1640 / 3540;
+
+	// Layout - Centering Screen
+	display: grid;
+	place-items: center;
+	position: relative;
 }
 
 .iphoneScreen {
-	width: 349px;
-	/* Removed clip-path to eliminate notch shape */
-	border-radius: 40px;
-	margin-left: 26px;
-	margin-top: 23px;
+	// Relative Sizing
+	width: 88%;
+	height: auto;
+	// Constrain height to stay within device frame
+	max-height: 97%;
+	aspect-ratio: 9 / 19.5;
+
+	// Visuals
+	border-radius: 26px; // Rigid radius, consistent across all views
+	object-fit: cover;
+	overflow: hidden;
+	z-index: 1;
+
+	// Reset margins (handled by grid)
+	margin: 0;
 }
 
 .videoContainer {
-	width: 349px;
-	height: 755px;
-	/* Removed clip-path to eliminate notch shape */
-	border-radius: 40px;
+	width: 88%;
+	height: auto;
+	max-height: 97%;
+	aspect-ratio: 9 / 19.5;
+
+	border-radius: 26px;
 	overflow: hidden;
-	/* Ensure video corners are clipped */
-	margin-left: 26px;
-	margin-top: 23px;
+	z-index: 1;
+	margin: 0;
 }
 
 .videoContainer>video {
-	width: 349px;
-	height: 755px;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 
+// Tablet & Mobile Adjustments
 @media only screen and (max-width: 1070px) {
-
 	.iphonePreview {
-		background-size: 370px auto;
+		width: 360px; // Scale down phone
 	}
-
-	.iphoneScreen {
-		width: 322px;
-		margin-left: 24px;
-		margin-top: 22px;
-	}
-
-	.videoContainer {
-		width: 322px;
-		height: 698px;
-		margin-left: 24px;
-		margin-top: 22px;
-	}
-
-	.videoContainer>video {
-		width: 322px;
-		height: 698px;
-	}
-
 }
 
 @media only screen and (max-width: 992px) {
-
 	.iphonePreview {
-		display: flex;
-		background-size: 260px auto;
-		background-position: center 0;
-		margin-top: 47px;
-		justify-content: center;
-		padding-bottom: 75px;
-	}
+		// Center in the column
+		margin-left: auto;
+		margin-right: auto;
 
-	.iphoneScreen {
-		width: 226px;
-		height: 488px;
-		-webkit-clip-path: url(#screenMask);
-		clip-path: url(#screenMask);
-		margin: 0px;
-		margin-top: 17px;
-	}
+		// Push down from the content above (App Info)
+		margin-top: 60px;
+		margin-bottom: 60px;
 
-	.videoContainer {
-		width: 226px;
-		height: 488px;
-		margin-left: 0px;
-		margin-top: 17px;
+		// Mobile Size - balanced for standard screens
+		width: 310px;
+		padding-bottom: 0; // Remove padding that affects centering
 	}
-
-	.videoContainer>video {
-		width: 226px;
-		height: 488px;
-	}
-
 }
 
 
